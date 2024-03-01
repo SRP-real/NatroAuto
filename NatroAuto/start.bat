@@ -1,4 +1,4 @@
 @echo off
 echo installing requirements...
-pip install nextcord pyautogui setuptools pywin32
+pip install nextcord pyautogui setuptools pywin32 configparser
 python bot.py
