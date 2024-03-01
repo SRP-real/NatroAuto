@@ -1,9 +1,9 @@
 
 # NatroAuto
 
-A discord bot that automates NatroMacro.
+A discord bot that automates Natro Macro.
 
-NatroAuto is a discord bot that automates the usage of NatroMacro.
+NatroAuto is a discord bot that automates the usage of Natro Macro.
 
 # commands
 
@@ -12,7 +12,7 @@ NatroAuto is a discord bot that automates the usage of NatroMacro.
 ``/stop`` starts the macro
 
 # getting started
-Before you start get a discord make a bot [here](https://discord.com/developers/applications).
+Before you start get a discord make a bot [here](https://discord.com/developers/applications) and [get Natro Macro](https://github.com/NatroTeam/NatroMacro)
 
 - download the latest release of this bot.
 - configure ``settings.config`` with your discord bot token and (optional) NATRO_PATH to the start.bat file path.
@@ -22,11 +22,11 @@ Before you start get a discord make a bot [here](https://discord.com/developers/
 
 - starting/stopping the macro using a command
 -  ending roblox process once ended
-- opening NatroMacro once started
+- opening Natro Macro once started
 
 # disclaimer
 
-We don't have any affiliation with TeamNatro or NatroMacro
+We don't have any affiliation with TeamNatro or Natro Macro
 
 # roadmap
 - adding screenshot of game
