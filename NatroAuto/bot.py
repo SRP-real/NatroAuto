@@ -40,8 +40,8 @@ async def start(interaction: Interaction):
         print("If you have a slow pc and the macro doesn't start up. Its the best to set NATRO_PATH to None")
         os.startfile(NatroPath)
     time.sleep(10)
-
-    
+    wsh.SendKeys("{F1}")
+    await interaction.followup.send("Macro started!")
 
 @bot.slash_command(
     name="stop",
