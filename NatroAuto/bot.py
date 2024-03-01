@@ -39,7 +39,7 @@ async def start(interaction: Interaction):
     if not NatroPath == "":
         print("If you have a slow pc and the macro doesn't start up. Its the best to set NATRO_PATH to None")
         os.startfile(NatroPath)
-        time.sleep(10)
+    time.sleep(10)
 
     
 
