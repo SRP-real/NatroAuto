@@ -14,7 +14,7 @@ NatroPath = ""
 
 print("NatroAuto")
 print("Discord bot by SRP")
-print("NatroMacro made by the Natro Team")
+print("Natro Macro made by the Natro Team")
 
 if config["SETTINGS"]["NATRO_PATH"] == "None" or "":
     print("WARNING: In the settings file natro path is set to None. With this setting if the macro is closed you can't open it")
