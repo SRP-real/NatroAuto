@@ -9,7 +9,7 @@ NatroAuto is a discord bot that automates the usage of Natro Macro.
 
 ``/start`` starts the macro
 
-``/stop`` starts the macro
+``/stop`` stops the macro
 
 # getting started
 Before you start get a discord make a bot [here](https://discord.com/developers/applications) and [get Natro Macro](https://github.com/NatroTeam/NatroMacro)
