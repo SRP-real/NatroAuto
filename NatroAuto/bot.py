@@ -5,7 +5,6 @@ import win32com.client as comclt
 import configparser
 import os
 import time
-
 from PIL import ImageGrab
 import io
 
