@@ -5,7 +5,8 @@ import win32com.client as comclt
 import configparser
 import os
 import time
-import pyautogui
+from PIL import ImageGrab
+import io
 
 config = configparser.ConfigParser()
 config.read("settings.config")
@@ -43,11 +44,13 @@ async def start(interaction: Interaction):
     wsh.SendKeys("{F1}")
     await interaction.followup.send("Macro started!")
 
+
+
 @bot.slash_command(
     name="stop",
     description="stops the bot"
 )
-async def start(interaction: Interaction):
+async def stop(interaction: Interaction):
     await interaction.response.defer()
 
     wsh.SendKeys("{F3}")
@@ -56,13 +59,34 @@ async def start(interaction: Interaction):
 
 
 
+@bot.slash_command(
+    name="screenshot",
+    description="makes a screenshot of the client"
+)
+async def screenshot(interaction: Interaction):
+    await interaction.response.defer()
+    screenshot = ImageGrab.grab()
+
+
+    image_stream = io.BytesIO()
+    screenshot.save(image_stream, format='PNG')
+    image_stream.seek(0)
+
+    await interaction.followup.send(file=nextcord.File(image_stream, filename='screenshot.png'))
 
 
 
 
 
 
+if not config["SETTINGS"]["BOT_TOKEN"] == "":
+    bot.run(config["SETTINGS"]["BOT_TOKEN"])
+else:
+    print("discord bot token was not found.")
+    token = input("If you want to paste it here it will work only this time: ")
+    print("Bot will be running soon...")
+    bot.run(token)
+    
 
 
 
-bot.run(config["SETTINGS"]["BOT_TOKEN"])

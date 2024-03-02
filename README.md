@@ -11,6 +11,8 @@ NatroAuto is a discord bot that automates the usage of Natro Macro.
 
 ``/stop`` stops the macro
 
+``/screenshot`` makes a screenshot of the desktop
+
 # getting started
 Before you start get a discord make a bot [here](https://discord.com/developers/applications) and [get Natro Macro](https://github.com/NatroTeam/NatroMacro)
 
@@ -23,13 +25,13 @@ Before you start get a discord make a bot [here](https://discord.com/developers/
 - starting/stopping the macro using a command
 -  ending roblox process once ended
 - opening Natro Macro once started
+- screenshots on the game using ``/screenshot``
 
 # disclaimer
 
 We don't have any affiliation with TeamNatro or Natro Macro
 
 # roadmap
-- adding screenshot of game
 - checking stats and inventory
 
 
