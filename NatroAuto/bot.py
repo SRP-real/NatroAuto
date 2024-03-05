@@ -87,7 +87,7 @@ def githubWeb():
 
 def exitProgram():
    icon.stop()
-   sys.exit()
+   os.system("taskkill /F /IM \"python.exe\"")
 
 script_location = Path(__file__).absolute().parent
 image = Image.open(script_location / 'NatroAutoBackgroundTask.png')
