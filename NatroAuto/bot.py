@@ -1,12 +1,19 @@
 import nextcord
 from nextcord.ext import commands
 from nextcord import Interaction, SlashOption
-import win32com.client as comclt
+import win32com.client as win32comClient
 import configparser
 import os
 import time
 from PIL import ImageGrab
 import io
+from pystray import MenuItem as item
+import pystray
+from PIL import Image
+from pathlib import Path
+import webbrowser
+import sys
+import threading
 
 config = configparser.ConfigParser()
 config.read("settings.config")
@@ -26,7 +33,7 @@ else:
 intents = nextcord.Intents.all()
 intents.guild_messages = True
 bot = commands.Bot(command_prefix="!", intents=intents)
-wsh = comclt.Dispatch("WScript.Shell")
+wsh = win32comClient.Dispatch("WScript.Shell")
 
 
 @bot.slash_command(
@@ -75,18 +82,21 @@ async def screenshot(interaction: Interaction):
     await interaction.followup.send(file=nextcord.File(image_stream, filename='screenshot.png'))
 
 
+def githubWeb():
+    webbrowser.open("https://github.com/SRP-real/NatroAuto")
+
+def exitProgram():
+   icon.stop()
+   sys.exit()
+
+script_location = Path(__file__).absolute().parent
+image = Image.open(script_location / 'NatroAutoBackgroundTask.png')
+menu = (item('github', githubWeb), item('exit', exitProgram))
+icon = pystray.Icon("NatroAuto", image, "NatroAuto", menu)
 
 
 
+bot_thread = threading.Thread(target=bot.run, args=(config["SETTINGS"]["BOT_TOKEN"],))
+bot_thread.start()
 
-if not config["SETTINGS"]["BOT_TOKEN"] == "":
-    bot.run(config["SETTINGS"]["BOT_TOKEN"])
-else:
-    print("discord bot token was not found.")
-    token = input("If you want to paste it here it will work only this time: ")
-    print("Bot will be running soon...")
-    bot.run(token)
-    
-
-
-
+icon.run()
